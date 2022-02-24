@@ -1,0 +1,146 @@
+/*Definições gerais e Definições da Grid*/
+body {
+    margin: 0;
+    height: 100vh;
+
+    display: grid;
+    grid-template-areas: 
+        "header aside"
+        "main aside"
+        "main aside";
+    grid-template-rows: 200px 1fr 40px;
+    grid-template-columns: 1fr 700px;
+
+    background-color: #121214;
+    font-family: 'Spartan', Comforter sans-serif;
+    font-weight: 700;
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+    color: #E1E1E6;
+    margin: 30px;
+}
+
+aside {
+    grid-area: aside;
+
+/*Definições background read_news*/
+    background-image: url(./img/read_news.jpg);
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: cover;   
+}
+
+/*Definições da img logo e  read_news*/
+header img {
+    width: 400px;
+    margin: 50px;
+}
+
+/*Definições do form, input e button*/
+main form {
+    display: flex;
+    position:absolute;
+}
+
+form {
+    margin-top: 10px;
+}
+
+main label {
+    color: #A8A8A8;
+}
+
+.send {
+    padding: 8px;
+    /*Definições da borda do input email*/
+    border: none;
+    border-left: 5px  solid #04D361;
+}
+
+.button {
+    padding: 25px;
+    border: none;
+
+    /*Definições da img send*/
+    background-image: url(./img/send.svg) ;
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #8257e5;
+    
+}
+
+/*Definições dos textos*/
+.title {
+    color: #04D361;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.sub-title {
+    font-size: 13px;
+    color: white;
+    font-weight: bold;
+}
+
+.text {
+    font-size: 13.5px;
+    margin-bottom: 70px;
+}
+
+/*Definições do último texto e img */
+.final {
+    display: flex;
+    margin-top: 120px;
+}
+
+.final a {
+    color: #8257e5;
+    text-decoration: none;
+}
+
+.final-text {
+    margin-right: 10px;
+}
+
+/*Definições de resposividade de telas maiores */
+@media (min-width: 1700px) and (max-width: 2000px) {
+    body {
+       
+        grid-template-areas: 
+        "header aside"
+        "main aside"
+        "main aside";
+        grid-template-rows: 200px 1fr 60px;
+        grid-template-columns: 1fr 900px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body {
+       
+        grid-template-areas: 
+        "header header"
+        "main main"
+        "aside aside";
+        grid-template-rows: 120px 1fr 600px;
+        grid-template-columns: 1fr 60px;
+    }
+   
+    .send {
+        font-size: 8px;
+    }
+}
+
+/*Definições de resposividade para teles menores*/
+@media screen and (max-width: 300px) {
+    .send {
+        font-size: 5px;
+    }
+}
